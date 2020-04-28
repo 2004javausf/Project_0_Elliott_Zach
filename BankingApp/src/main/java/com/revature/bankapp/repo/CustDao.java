@@ -13,7 +13,5 @@ public interface CustDao {
 	public void updateCust(Map<String, Customer> custMap);
 	
 	public Customer getUsername(String name);
-	
-	
 
 }
