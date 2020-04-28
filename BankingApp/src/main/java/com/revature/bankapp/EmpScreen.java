@@ -14,7 +14,8 @@ public class EmpScreen implements BankScreen {
 		System.out.println("1: View account information");
 		System.out.println("2: View personal information");
 		System.out.println("3: Approve/Deny open applications");
-		System.out.println("4: Exit Application");
+		System.out.println("4: Return to Main Screen");
+		System.out.println("5: Exit Application");
 		System.out.println("========================================");
 		
 		typEmp = scan.nextLine();
@@ -25,6 +26,8 @@ public class EmpScreen implements BankScreen {
 		}else if (typEmp.equals("3")) {
 			return new AppDen().render(scan);
 		}else if (typEmp.equals("4")) {
+			return new MainBankScreen().render(scan);
+		}else if (typEmp.equals("5")) {
 			BankApp.isRunning = false;
 			return null;
 		}else {

@@ -11,7 +11,8 @@ public class AppDen implements BankScreen {
 		System.out.println("What action would you like to implement?");
 		System.out.println("1: Approve");
 		System.out.println("2: Deny");
-		System.out.println("3: Exit Application");
+		System.out.println("3: Return to Employee Screen");
+		System.out.println("4: Exit Application");
 		System.out.println("==================================");
 		
 		typApD = scan.nextLine();
@@ -20,6 +21,8 @@ public class AppDen implements BankScreen {
 		}else if (typApD.equals("2")){
 			System.out.println("Deny");//Placeholder
 		}else if (typApD.equals("3")) {
+			return new EmpScreen().render(scan);
+		}else if (typApD.equals("4")) {
 			BankApp.isRunning = false;
 			return null;
 		}else {
