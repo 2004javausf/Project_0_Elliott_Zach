@@ -11,17 +11,17 @@ public class AppDenEmpAccess implements BankScreen {
 		System.out.println("What action would you like to implement?");
 		System.out.println("1: Approve");
 		System.out.println("2: Deny");
-		System.out.println("3: Return to Employee Screen");
+		System.out.println("3: Return to Main Menu");
 		System.out.println("4: Exit Application");
 		System.out.println("==================================");
 		
 		typApD = scan.nextLine();
 		if (typApD.equals("1")) {
-			System.out.println("Approve"); //Placeholder
+			ApproveDeny.AD(); //Placeholder
 		}else if (typApD.equals("2")){
 			System.out.println("Deny");//Placeholder
 		}else if (typApD.equals("3")) {
-			return new EmpScreen().render(scan);
+			return new MainBankScreen().render(scan);
 		}else if (typApD.equals("4")) {
 			BankApp.isRunning = false;
 			return null;

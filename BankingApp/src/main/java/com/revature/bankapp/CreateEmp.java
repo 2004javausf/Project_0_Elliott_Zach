@@ -39,6 +39,7 @@ public class CreateEmp implements BankScreen {
 				return new CreateEmp().render(scan);
 			}else {
 				System.out.println("Invalid Entry, Restarting Create Employee");
+				EmployeeArmy.EmployeeListTemp.remove(0);
 				return new CreateEmp().render(scan);
 			}
 		}else if (typCE.equalsIgnoreCase("n")) {
