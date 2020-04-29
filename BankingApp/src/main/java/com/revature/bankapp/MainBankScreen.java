@@ -2,9 +2,14 @@ package com.revature.bankapp;
 
 import java.util.Scanner;
 
+import com.revature.bankapp.repo.AcctDaoImpl;
+import com.revature.bankapp.repo.CustDaoImpl;
+
 public class MainBankScreen implements BankScreen {
 	
 	String typePerson;
+	CustDaoImpl cDI = new CustDaoImpl();
+	AcctDaoImpl aDI = new AcctDaoImpl();
 	
 	@Override
 	public BankScreen render(Scanner scan) {
@@ -32,6 +37,16 @@ public class MainBankScreen implements BankScreen {
 		else if(typePerson.equals("4")) {
 			BankApp.isRunning = false;
 			return null;
+		}
+		
+		else if(typePerson.equals("5")) {
+			System.out.println(cDI.viewCust());
+			return new MainBankScreen().render(scan);
+		}
+		
+		else if(typePerson.equals("6")) {
+			System.out.println(aDI.viewAcct());
+			return new MainBankScreen().render(scan);
 		}
 		
 		else {

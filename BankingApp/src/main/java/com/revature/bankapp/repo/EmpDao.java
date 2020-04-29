@@ -2,15 +2,15 @@ package com.revature.bankapp.repo;
 
 import java.util.Map;
 
-import com.revature.bankapp.Employee;
+import com.revature.bankapp.EmployeeFinal;
 
 public interface EmpDao {
-	String filename1 = "daoEmp.txt";
+	public static final String employeeFile = "daoEmp.txt";
 	
-	public Map<String, Employee> viewEmp();
+	public Map<String, EmployeeFinal> viewEmp();
 	
-	public void updateEmp(Map<String, Employee> EmpMap);
+	public void updateEmp(Map<String, EmployeeFinal> EmpMap);
 	
-	public Employee getUsername(String name);
+	public EmployeeFinal getUsername(String name);
 	
 }

@@ -2,25 +2,25 @@ package com.revature.bankapp.repo;
 
 import java.util.Map;
 
-import com.revature.bankapp.Employee;
+import com.revature.bankapp.EmployeeFinal;
 
 public class EmpDaoImpl implements EmpDao {
 
 	@Override
-	public Map<String, Employee> viewEmp() {
-		Map<String, Employee> empMap = (Map<String, Employee>) EmpAccess.readObject(filename1);
+	public Map<String, EmployeeFinal> viewEmp() {
+		Map<String, EmployeeFinal> empMap = (Map<String, EmployeeFinal>) EmpAccess.readObject(employeeFile);
 		return empMap;
 	}
 
 	@Override
-	public void updateEmp(Map<String, Employee> empMap) {
-		EmpAccess.writeObject(filename1, empMap);
+	public void updateEmp(Map<String, EmployeeFinal> empMap) {
+		EmpAccess.writeObject(employeeFile, empMap);
 		
 	}
 
 	@Override
-	public Employee getUsername(String name) {
-		Map<String, Employee> empMap = viewEmp();
+	public EmployeeFinal getUsername(String name) {
+		Map<String, EmployeeFinal> empMap = viewEmp();
 			for (String i:empMap.keySet()) {
 				if (empMap.get(i).getUsername().equals(name)) {
 					return empMap.get(i);

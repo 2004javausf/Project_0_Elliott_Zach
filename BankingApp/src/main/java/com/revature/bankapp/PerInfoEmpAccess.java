@@ -2,7 +2,7 @@ package com.revature.bankapp;
 
 import java.util.Scanner;
 
-public class PerInfo implements BankScreen {
+public class PerInfoEmpAccess implements BankScreen {
 
 	String typPer;
 	String secTypPer;
@@ -24,7 +24,7 @@ public class PerInfo implements BankScreen {
 			System.out.println("Would you like to perform another action?  (y/n)");
 			secTypPer = scan.nextLine();
 			if (secTypPer.equalsIgnoreCase("y")) {
-				return new PerInfo().render(scan);
+				return new PerInfoEmpAccess().render(scan);
 			}else if (secTypPer.equalsIgnoreCase("n")) {
 				BankApp.isRunning = false;
 				return null;
@@ -35,7 +35,7 @@ public class PerInfo implements BankScreen {
 			System.out.println("Would you like to perform another action?  (y/n)");
 			secTypPer = scan.nextLine();
 			if (secTypPer.equalsIgnoreCase("y")) {
-				return new PerInfo().render(scan);
+				return new PerInfoEmpAccess().render(scan);
 			}else if (secTypPer.equalsIgnoreCase("n")) {
 				BankApp.isRunning = false;
 				return null;
@@ -47,7 +47,7 @@ public class PerInfo implements BankScreen {
 			return null;
 		}else {
 			System.out.println("Invalid Entry");
-			return new AccInfo().render(scan);
+			return new AccInfoEmpAccess().render(scan);
 		}
 		return null;
 	}

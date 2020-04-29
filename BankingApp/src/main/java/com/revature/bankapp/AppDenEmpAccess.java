@@ -2,7 +2,7 @@ package com.revature.bankapp;
 
 import java.util.Scanner;
 
-public class AppDen implements BankScreen {
+public class AppDenEmpAccess implements BankScreen {
 
 	String typApD;
 	public BankScreen render(Scanner scan) {
@@ -27,7 +27,7 @@ public class AppDen implements BankScreen {
 			return null;
 		}else {
 			System.out.println("Invalid Entry");
-			return new AccInfo().render(scan);
+			return new AppDenEmpAccess().render(scan);
 		}
 		return null;
 	}

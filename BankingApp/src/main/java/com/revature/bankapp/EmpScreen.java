@@ -20,11 +20,11 @@ public class EmpScreen implements BankScreen {
 		
 		typEmp = scan.nextLine();
 		if (typEmp.equals("1")) {
-			return new AccInfo().render(scan);
+			return new AccInfoEmpAccess().render(scan);
 		}else if (typEmp.equals("2")) {
-			return new PerInfo().render(scan);
+			return new PerInfoEmpAccess().render(scan);
 		}else if (typEmp.equals("3")) {
-			return new AppDen().render(scan);
+			return new AppDenEmpAccess().render(scan);
 		}else if (typEmp.equals("4")) {
 			return new MainBankScreen().render(scan);
 		}else if (typEmp.equals("5")) {
