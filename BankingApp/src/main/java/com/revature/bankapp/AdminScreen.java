@@ -15,20 +15,34 @@ public class AdminScreen implements BankScreen {
 	System.out.println("3: View Employee Information");
 	System.out.println("4: Approve/Deny New Accounts");
 	System.out.println("5: Deposit/Withdraw/Transer Funds");
-	//add admin functionality
+	System.out.println("6: Cancel Account");
+	System.out.println("7: Return to Main Menu");
+	System.out.println("8: Exit Application");
 	
 	typAdmin = scan.nextLine();
 	if(typAdmin.equals("1")) {
-		System.out.println("Construct admin page under development"); //create construct admin
+		return new CreateAdmin().render(scan); //create construct admin
 	}else if (typAdmin.equals("2")) {
 		return new CreateEmp().render(scan);
 	}else if (typAdmin.equals("3")) {
 		return new viewEmp().render(scan);
 	}else if (typAdmin.equals("4")) {
 		return new AppDenEmpAccess().render(scan);
+	}else if (typAdmin.equals("5")) {
+		System.out.println("D/W/T admin level page under development"); //need customer stuff
+	}else if (typAdmin.equals("6")) {
+		System.out.println("Cancel account page undr development"); //need customer stuff
+	}else if (typAdmin.equals("7")) {
+		return new MainBankScreen().render(scan);
+	}else if (typAdmin.equals("8")) {
+		BankApp.isRunning = false;
+		return null;
+	}else {
+		System.out.println("Invalid Entry");
+		return new AdminScreen().render(scan);
 	}
-	BankApp.isRunning = false;
 	return null;
+	
 	}
 
 }
