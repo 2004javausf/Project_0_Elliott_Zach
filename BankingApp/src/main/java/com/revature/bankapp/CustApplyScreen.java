@@ -11,6 +11,9 @@ public class CustApplyScreen implements BankScreen {
 	
 	CustDaoImpl cDI = new CustDaoImpl();
 	
+	int randNum = (int) (Math.random() * 1000) + 1;
+	int randNum2 = (int) (Math.random() * 90) + 1;
+	
 	public CustApplyScreen() {
 		this.cust = new Customer();
 	}
@@ -27,6 +30,7 @@ public class CustApplyScreen implements BankScreen {
 		cust.setuName(scan.nextLine());
 		System.out.println("What would you like your password to be?");
 		cust.setPass(scan.nextLine());
+		cust.setAcctNum(randNum + randNum2);
 		
 		if(cDI.viewCust().containsKey(cust.getuName())) {
 			System.out.println("I'm sorry that username exsits already.");

@@ -13,18 +13,24 @@ public class Customer implements Serializable {
 	private String lName;
 	private String uName;
 	private String pass;
+	private Integer acctNum;
+	private Integer acctNum2;
 	private boolean isValid = false;
+	
+	
 	
 	public Customer() {
 		super();
 	}
-
-	public Customer(String fName, String lName, String uName, String pass, boolean isValid) {
+	
+	public Customer(String fName, String lName, String uName, String pass, Integer acctNum, Integer acctNum2, boolean isValid) {
 		super();
 		this.fName = fName;
 		this.lName = lName;
 		this.uName = uName;
 		this.pass = pass;
+		this.acctNum = acctNum;
+		this.acctNum2 = acctNum2;
 		this.isValid = isValid;
 	}
 	
@@ -58,13 +64,25 @@ public class Customer implements Serializable {
 	public void setValid(boolean isValid) {
 		this.isValid = isValid;
 	}
+	
+	public int getAcctNum() {
+		return acctNum;
+	}
+
+	public void setAcctNum(Integer acctNum) {
+		this.acctNum = acctNum;
+	}
+	public int getAcctNum2() {
+		return acctNum2;
+	}
+	public void setAcctNum2(Integer acctNum2) {
+		this.acctNum2 = acctNum2;
+	}
 
 	@Override
 	public String toString() {
-		return "Customer [fName=" + fName + ", lName=" + lName + ", uName=" + uName + ", pass=" + pass + ", isValid="
-				+ isValid + "]";
+		return "Customer [fName=" + fName + ", lName=" + lName + ", uName=" + uName + ", pass=" + pass + ", acctNum="
+				+ acctNum + ", acctNum2=" + acctNum2 + ", isValid=" + isValid + "]";
 	}
 	
-	
-
 }
