@@ -5,17 +5,16 @@ import java.util.Scanner;
 
 import com.revature.bankapp.repo.AcctDaoImpl;
 import com.revature.bankapp.repo.CustDaoImpl;
-
+import com.revature.bankapp.Customer;
 
 public class CustAccountScreen implements BankScreen {
-
+	
+	
 	AccountInfo acct;
 	
 	AcctDaoImpl aDI = new AcctDaoImpl();
 	
 	CustDaoImpl cDI = new CustDaoImpl();
-	
-	
 	
 	int aNum;
 	String nameU;
@@ -28,6 +27,7 @@ public class CustAccountScreen implements BankScreen {
 
 	@Override
 	public BankScreen render(Scanner scan) {
+				
 		System.out.println("Welcome Customer!");
 		System.out.println("Please enter your acct number.");
 		aNum = scan.nextInt();
@@ -36,7 +36,7 @@ public class CustAccountScreen implements BankScreen {
 		System.out.println("Please enter your password.");
 		word = scan.next();
 		
-		if(cDI.getUsername(nameU).getPass().equals(word) && aDI.getAcct(aNum).getuName2().equals(nameU)) {
+		if(cDI.getUsername(nameU).getPass().equals(word) && cDI.getUsername(nameU).getAcctNum() == aNum){
 			System.out.println("Welcome " + nameU + ".");
 			System.out.println("What would you like to do?");
 			System.out.println("1: Check Balance");
@@ -52,14 +52,16 @@ public class CustAccountScreen implements BankScreen {
 			if(choice.equals("2")) {
 				String stop;
 				System.out.println("How much would you like to deposit?");
-				double amt = scan.nextDouble();
+				int amt = scan.nextInt();
 				if(amt > 0) {
-					Map<Integer, AccountInfo> db = aDI.viewAcct();
-					double money = aDI.getAcct(aNum).getAmount();
+					int money = aDI.getAcct(aNum).getAmount();
 					System.out.println(money);
 					money = money + amt;
 					System.out.println(money);
-					aDI.getAcct(aNum).setAmount(money);
+					acct.setAcctNum(aNum);
+					acct.setAmount(money);
+					Map<Integer, AccountInfo> db = aDI.viewAcct();
+					db.put(acct.getAcctNum(), acct);
 					aDI.updateAcct(db);
 					System.out.println(aDI.getAcct(aNum).getAmount());
 					System.out.println("WAIT");

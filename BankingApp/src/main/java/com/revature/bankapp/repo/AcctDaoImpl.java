@@ -1,6 +1,6 @@
 package com.revature.bankapp.repo;
 
-import java.math.BigDecimal;
+//import java.math.BigDecimal;
 import java.util.Map;
 
 import com.revature.bankapp.AccountInfo;
@@ -29,6 +29,12 @@ public class AcctDaoImpl implements AcctDao {
 		}
 		return null;
 	}
+
+//	@Override
+//	public void updateAcct(Map<Integer, Double> acctMap) {
+//		AcctAccess.writeObject(filename, acctMap);
+//		
+//	}
 		
 }
 

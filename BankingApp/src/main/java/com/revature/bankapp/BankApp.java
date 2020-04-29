@@ -27,18 +27,15 @@ public class BankApp {
 //		cust.setPass("pass");
 //		//db.put(cust.getuName(), cust);
 //		cDI.updateCust(custMap);
-		
-//		Map<String, Customer> custMap = new HashMap<>();
-//		acct.setAcctNum(555);
-//		acct.setfName2("John");
-//		acct.setLname2("Smith");
-//		acct.setuName2("JSmith");
-//		acct.setAmount(100.00);
-//		//db.put(cust.getuName(), acct);
-//		cDI.updateCust(custMap);
-//		Map<Integer, AccountInfo> acctMap = new HashMap<>();
-//		aDI.updateAcct(acctMap);
 //		
+//		//Map<String, Customer> custMap = new HashMap<>();
+//		//db.put(cust.getuName(), acct);
+////		cDI.updateCust(custMap);
+//	Map<Integer, AccountInfo> acctMap = new HashMap<>();
+//		acct.setAcctNum(555);
+//		acct.setAmount(100);
+//	aDI.updateAcct(acctMap);
+		
 		BankScreen presentScreen = new MainBankScreen();
 		
 		while(isRunning) {
