@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.revature.bankapp.repo.EmpAccess;
 
-public class viewEmp implements BankScreen {
+public class ViewEmp implements BankScreen {
 	String typVE;
 	@Override
 	public BankScreen render(Scanner scan) {

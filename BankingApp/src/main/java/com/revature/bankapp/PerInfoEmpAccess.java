@@ -2,10 +2,20 @@ package com.revature.bankapp;
 
 import java.util.Scanner;
 
+import com.revature.bankapp.repo.CustDaoImpl;
+
 public class PerInfoEmpAccess implements BankScreen {
 
+	Customer cust;
 	String typPer;
 	String secTypPer;
+	String actName;
+	
+	CustDaoImpl cDI = new CustDaoImpl();
+	
+	public PerInfoEmpAccess() {
+		this.cust = new Customer();
+	}
 	
 	public BankScreen render(Scanner scan) {
 		System.out.println("==================================");
@@ -19,7 +29,9 @@ public class PerInfoEmpAccess implements BankScreen {
 		
 		typPer = scan.nextLine();
 		if (typPer.equals("1")) {
-			System.out.println("Client name"); //Placeholder
+			System.out.println("What is the user name of the client you are trying to access?");
+			actName = scan.nextLine();
+			System.out.println(cDI.getUsername(actName).getfName() + " " + cDI.getUsername(actName).getlName());
 			System.out.println("==================");
 			System.out.println("Would you like to perform another action?  (y/n)");
 			secTypPer = scan.nextLine();
@@ -30,7 +42,9 @@ public class PerInfoEmpAccess implements BankScreen {
 				return null;
 			}
 		}else if (typPer.equals("2")){
-			System.out.println("App status");//Placeholder
+			System.out.println("What is the user name of the client you are trying to access?");
+			actName = scan.nextLine();
+			System.out.println(cDI.getUsername(actName).isValid());
 			System.out.println("==================");
 			System.out.println("Would you like to perform another action?  (y/n)");
 			secTypPer = scan.nextLine();

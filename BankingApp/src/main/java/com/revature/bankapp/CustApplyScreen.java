@@ -2,6 +2,7 @@ package com.revature.bankapp;
 
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 import com.revature.bankapp.repo.CustDaoImpl;
 
@@ -31,12 +32,13 @@ public class CustApplyScreen implements BankScreen {
 		System.out.println("What would you like your password to be?");
 		cust.setPass(scan.nextLine());
 		cust.setAcctNum(randNum + randNum2);
+		cust.setAcctNum2(0);
 		
 		if(cDI.viewCust().containsKey(cust.getuName())) {
 			System.out.println("I'm sorry that username exsits already.");
 			System.out.println("Please enter another username");
 			cust.setuName(scan.nextLine());
-			Map<String, Customer> db = cDI.viewCust();
+			TreeMap<String, Customer> db = cDI.viewCust();
 			db.put(cust.getuName(), cust);
 			cDI.updateCust(db);
 			System.out.println("Thank You!");
@@ -45,7 +47,7 @@ public class CustApplyScreen implements BankScreen {
 		}
 		
 		else {
-			Map<String, Customer> db = cDI.viewCust();
+			TreeMap<String, Customer> db = cDI.viewCust();
 			db.put(cust.getuName(), cust);
 			cDI.updateCust(db);
 			System.out.println("Thank You!");

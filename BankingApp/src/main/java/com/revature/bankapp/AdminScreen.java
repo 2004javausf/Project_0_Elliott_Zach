@@ -7,7 +7,7 @@ public class AdminScreen implements BankScreen {
 	String typAdmin;
 	@Override
 	public BankScreen render(Scanner scan) {
-	System.out.println("Welcome Administrator"); //add admin name
+	System.out.println("Welcome Administrator"); 
 	System.out.println("==========================");
 	System.out.println("What would you like to do?");
 	System.out.println("1: Create new Admin");
@@ -21,17 +21,17 @@ public class AdminScreen implements BankScreen {
 	
 	typAdmin = scan.nextLine();
 	if(typAdmin.equals("1")) {
-		return new CreateAdmin().render(scan); //create construct admin
+		return new CreateAdmin().render(scan);
 	}else if (typAdmin.equals("2")) {
 		return new CreateEmp().render(scan);
 	}else if (typAdmin.equals("3")) {
-		return new viewEmp().render(scan);
+		return new ViewEmp().render(scan);
 	}else if (typAdmin.equals("4")) {
 		return new AppDenEmpAccess().render(scan);
 	}else if (typAdmin.equals("5")) {
-		System.out.println("D/W/T admin level page under development"); //need customer stuff
+		return new AdminDWT().render(scan);
 	}else if (typAdmin.equals("6")) {
-		System.out.println("Cancel account page undr development"); //need customer stuff
+		return new CloseAccount().render(scan);
 	}else if (typAdmin.equals("7")) {
 		return new MainBankScreen().render(scan);
 	}else if (typAdmin.equals("8")) {
@@ -41,7 +41,6 @@ public class AdminScreen implements BankScreen {
 		System.out.println("Invalid Entry");
 		return new AdminScreen().render(scan);
 	}
-	return null;
 	
 	}
 
