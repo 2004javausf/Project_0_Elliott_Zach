@@ -16,6 +16,10 @@ public class AdminDWT implements BankScreen {
 	String secTypADWT;
 	int num;
 	int num2;
+	Scanner sc = new Scanner(System.in);
+	public AdminDWT() {
+		this.acct = new AccountInfo();
+	}
 	@Override
 	public BankScreen render(Scanner scan) {
 		System.out.println("Admin Level D/W/T Screen");
@@ -44,7 +48,7 @@ public class AdminDWT implements BankScreen {
 			secTypADWT=scan.nextLine();
 			if (secTypADWT.equals("1")) {
 				System.out.println("How much would you like to deposit?");
-				int amt = scan.nextInt();
+				int amt = sc.nextInt();
 				if(amt > 0) {
 					int money = aDI.getAcct(num).getAmount();
 					money = money + amt;
@@ -111,6 +115,7 @@ public class AdminDWT implements BankScreen {
 							db4.put(acct.getAcctNum(), acct);
 							aDI.updateAcct(db4);
 							System.out.println("Your new balance is $" + aDI.getAcct(num2).getAmount());
+							return new AdminDWT().render(scan);
 						}else {
 							return null;
 						}
