@@ -37,7 +37,8 @@ public class CustAccountScreen implements BankScreen {
 		System.out.println("Please enter your password.");
 		word = scan.next();
 		
-		if(cDI.getUsername(nameU).getPass().equals(word) && cDI.getUsername(nameU).getAcctNum() == aNum){
+		if(cDI.getUsername(nameU).getPass().equals(word) && cDI.getUsername(nameU).getAcctNum() == aNum
+				&& cDI.getUsername(nameU).isValid() == true){
 			System.out.println("Welcome " + nameU + ".");
 			System.out.println("What would you like to do?");
 			System.out.println("1: Check Balance");
@@ -113,8 +114,6 @@ public class CustAccountScreen implements BankScreen {
 					db2.put(acct.getAcctNum(), acct);
 					aDI.updateAcct(db2);
 					System.out.println("Your new balance is $" + aDI.getAcct(aNum).getAmount());
-//					System.out.println("Please press any key to continue.");
-//					stop2 = scan.nextLine();
 						if(tTotal == tTotal) {
 							System.out.println("Which account are you transferring to?");
 							aNum2 = scan.nextInt();
