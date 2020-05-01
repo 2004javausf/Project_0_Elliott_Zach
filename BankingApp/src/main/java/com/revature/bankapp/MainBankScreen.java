@@ -23,11 +23,11 @@ public class MainBankScreen implements BankScreen {
 		typePerson = scan.nextLine();
 		
 		if(typePerson.equals("1")) {
-			return new AdminScreen().render(scan);
+			return new AdminLogin().render(scan);
 		}
 		
 		else if(typePerson.equals("2")) {
-			return new EmpScreen().render(scan);
+			return new EmpLogin().render(scan);
 		}
 		
 		else if(typePerson.equals("3")) {
