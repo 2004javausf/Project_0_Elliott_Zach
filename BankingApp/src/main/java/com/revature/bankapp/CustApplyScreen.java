@@ -14,6 +14,7 @@ public class CustApplyScreen implements BankScreen {
 	
 	int randNum = (int) (Math.random() * 1000) + 1;
 	int randNum2 = (int) (Math.random() * 90) + 1;
+	int number = randNum + randNum2;
 	
 	public CustApplyScreen() {
 		this.cust = new Customer();
@@ -43,6 +44,7 @@ public class CustApplyScreen implements BankScreen {
 			cDI.updateCust(db);
 			System.out.println("Thank You!");
 			System.out.println("Be aware you will not have access to an account until you are approved.");
+			System.out.println("When approved your account number will be: " + number);
 			return new MainBankScreen().render(scan);
 		}
 		
@@ -52,6 +54,7 @@ public class CustApplyScreen implements BankScreen {
 			cDI.updateCust(db);
 			System.out.println("Thank You!");
 			System.out.println("Be aware you will not have access to an account until you are approved.");
+			System.out.println("When approved your account number will be: " + number);
 			return new MainBankScreen().render(scan);
 		}
 		

@@ -19,8 +19,8 @@ public class AdminScreen implements BankScreen {
 	System.out.println("7: Cancel Account");
 	System.out.println("8: Return to Main Menu");
 	System.out.println("9: Exit Application");
-	
 	typAdmin = scan.nextLine();
+	
 	if(typAdmin.equals("1")) {
 		return new CreateAdmin().render(scan);
 	}else if (typAdmin.equals("2")) {

@@ -11,8 +11,9 @@ public class CustScreen implements BankScreen {
 		System.out.println("Hello Customer");
 		System.out.println("What would you like to do? Please type corresponding number.");
 		System.out.println("1: Create new account");
-		System.out.println("2: Access your account");
-		System.out.println("3: Exit");
+		System.out.println("2: Create new Joint account");
+		System.out.println("3: Access your account");
+		System.out.println("4: Exit");
 		choice = scan.nextLine();
 		
 		if(choice.equals("1")) {
@@ -20,10 +21,14 @@ public class CustScreen implements BankScreen {
 		}
 		
 		else if(choice.equals("2")) {
-			return new CustAccountScreen().render(scan);
+			return new JointAcct().render(scan);
 		}
 		
 		else if(choice.equals("3")) {
+			return new CustAccountScreen().render(scan);
+		}
+		
+		else if(choice.equals("4")) {
 			return new MainBankScreen().render(scan);
 		}
 		

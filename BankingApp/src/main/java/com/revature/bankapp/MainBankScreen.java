@@ -15,11 +15,11 @@ public class MainBankScreen implements BankScreen {
 	public BankScreen render(Scanner scan) {
 		
 		System.out.println("Welcome to Kool Kidz Only Bank");
-		System.out.println("What type of user are you? PLease type in corresponding number.");
+		System.out.println("What type of user are you? Please type in corresponding number.");
 		System.out.println("1: Admin");
 		System.out.println("2: Employee");
 		System.out.println("3: Customer");
-		System.out.println("4: Exit Apllication");
+		System.out.println("4: Exit Application");
 		typePerson = scan.nextLine();
 		
 		if(typePerson.equals("1")) {

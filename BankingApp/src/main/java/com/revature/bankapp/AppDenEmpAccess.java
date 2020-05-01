@@ -36,8 +36,8 @@ public class AppDenEmpAccess implements BankScreen {
 		if (typApD.equals("1")) {
 			System.out.println("Enter the username of the account you wish to view.");
 			nameU = scan.nextLine();
-			System.out.println(cDI.getUsername(nameU).getAcctNum() + " " + cDI.getUsername(nameU).getfName() +
-					" " + cDI.getUsername(nameU).getlName());
+			System.out.println("Account Number: " + cDI.getUsername(nameU).getAcctNum() + " First Name: " + cDI.getUsername(nameU).getfName() +
+					" Last Name: " + cDI.getUsername(nameU).getlName());
 			System.out.println("Would you like to approve or deny the account?");
 			System.out.println("Type A or D");
 			dec = scan.nextLine();
