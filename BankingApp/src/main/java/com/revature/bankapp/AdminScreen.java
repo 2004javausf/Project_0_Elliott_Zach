@@ -16,8 +16,9 @@ public class AdminScreen implements BankScreen {
 	System.out.println("4: Approve/Deny New Accounts");
 	System.out.println("5: Deposit/Withdraw/Transer Funds");
 	System.out.println("6: Cancel Account");
-	System.out.println("7: Return to Main Menu");
-	System.out.println("8: Exit Application");
+	System.out.println("7: View All Customer Information");
+	System.out.println("8: Return to Main Menu");
+	System.out.println("9: Exit Application");
 	
 	typAdmin = scan.nextLine();
 	if(typAdmin.equals("1")) {
@@ -33,8 +34,10 @@ public class AdminScreen implements BankScreen {
 	}else if (typAdmin.equals("6")) {
 		return new CloseAccount().render(scan);
 	}else if (typAdmin.equals("7")) {
-		return new MainBankScreen().render(scan);
+		return new ViewAllCustInfo().render(scan);
 	}else if (typAdmin.equals("8")) {
+		return new MainBankScreen().render(scan);
+	}else if (typAdmin.equals("9")) {
 		BankApp.isRunning = false;
 		return null;
 	}else {

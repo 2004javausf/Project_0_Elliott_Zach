@@ -31,7 +31,7 @@ public class PerInfoEmpAccess implements BankScreen {
 		if (typPer.equals("1")) {
 			System.out.println("What is the user name of the client you are trying to access?");
 			actName = scan.nextLine();
-			System.out.println(cDI.getUsername(actName).getfName() + " " + cDI.getUsername(actName).getlName());
+			System.out.println("First Name: " + cDI.getUsername(actName).getfName() + " Last Name: " + cDI.getUsername(actName).getlName());
 			System.out.println("==================");
 			System.out.println("Would you like to perform another action?  (y/n)");
 			secTypPer = scan.nextLine();

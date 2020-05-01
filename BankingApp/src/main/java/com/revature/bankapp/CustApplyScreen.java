@@ -21,6 +21,7 @@ public class CustApplyScreen implements BankScreen {
 
 	@Override
 	public BankScreen render(Scanner scan) {
+		System.out.println(randNum);
 		System.out.println("We are happy you have decided to choose our bank!");
 		System.out.println("Please enter some information for our records.");
 		System.out.println("What is your first name?");
