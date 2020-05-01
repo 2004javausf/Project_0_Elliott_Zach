@@ -71,7 +71,7 @@ public class AdminDWT implements BankScreen {
 				}
 			}else if (secTypADWT.equals("2")) {
 				System.out.println("How much would you like to withdraw?");
-				int amt = scan.nextInt();
+				int amt = sc.nextInt();
 				if(amt > 0) {
 					int money = aDI.getAcct(num).getAmount();
 					money = money - amt;
@@ -94,7 +94,7 @@ public class AdminDWT implements BankScreen {
 				}	
 			}else if (secTypADWT.equals("3")) {
 				System.out.println("How much would you like to transfer");
-				int tAmt = scan.nextInt();
+				int tAmt = sc.nextInt();
 				int tMoney = aDI.getAcct(num).getAmount();
 				int tTotal = tMoney - tAmt;
 				if(tTotal >= 0) {
@@ -106,7 +106,7 @@ public class AdminDWT implements BankScreen {
 					System.out.println("Your new balance is $" + aDI.getAcct(num).getAmount());
 						if(tTotal == tTotal) {
 							System.out.println("Which account are you transferring to?");
-							num2 = scan.nextInt();
+							num2 = sc.nextInt();
 							int rMoney = aDI.getAcct(num2).getAmount();
 							int moneyMoves = rMoney + tAmt;
 							acct.setAcctNum(num2);

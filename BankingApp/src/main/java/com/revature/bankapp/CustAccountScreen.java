@@ -84,7 +84,7 @@ public class CustAccountScreen implements BankScreen {
 			
 			else if(choice.equals("3")) {
 				System.out.println("How much would you like to withdraw?");
-				int wAmt = sc.nextInt();
+				int wAmt = scan.nextInt();
 				int wMoney = aDI.getAcct(aNum).getAmount();
 				int wTotal = wMoney - wAmt;
 				if(wTotal >= 0) {
@@ -109,7 +109,7 @@ public class CustAccountScreen implements BankScreen {
 			else if (choice.equals("4")) {
 				String stop2;
 				System.out.println("How much would you like to transfer");
-				int tAmt = sc.nextInt();
+				int tAmt = scan.nextInt();
 				int tMoney = aDI.getAcct(aNum).getAmount();
 				int tTotal = tMoney - tAmt;
 				if(tTotal >= 0) {
@@ -121,7 +121,7 @@ public class CustAccountScreen implements BankScreen {
 					System.out.println("Your new balance is $" + aDI.getAcct(aNum).getAmount());
 						if(tTotal == tTotal) {
 							System.out.println("Which account are you transferring to?");
-							aNum2 = sc.nextInt();
+							aNum2 = scan.nextInt();
 							int rMoney = aDI.getAcct(aNum2).getAmount();
 							int moneyMoves = rMoney + tAmt;
 							acct.setAcctNum(aNum2);
