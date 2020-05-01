@@ -26,8 +26,8 @@ public class CloseAccount implements BankScreen {
 		if (typCA.equals("1")) {
 			System.out.println("Enter the username of the account you wish to close");
 			nameU = scan.nextLine();
-			System.out.println(cDI.getUsername(nameU).getAcctNum() + " " + cDI.getUsername(nameU).getfName() +
-					" " + cDI.getUsername(nameU).getlName());
+			System.out.println("Account Number: " + cDI.getUsername(nameU).getAcctNum() + " First Name: " + cDI.getUsername(nameU).getfName() +
+					" Last Name: " + cDI.getUsername(nameU).getlName());
 			System.out.println("");
 			System.out.println("Is this the correct account to close? Do you wish to proceed? y/n");
 			secTypCA = scan.nextLine();
