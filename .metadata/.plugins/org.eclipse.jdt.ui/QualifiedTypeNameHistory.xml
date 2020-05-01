@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.revature.bankapp.BankScreen"/>
+<fullyQualifiedTypeName name="com.revature.bankapp.BankApp"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.revature.bankapp.EmployeeFinal"/>
+<fullyQualifiedTypeName name="com.revature.bankapp.repo.EmpAccess"/>
+<fullyQualifiedTypeName name="com.revature.bankapp.EmployeeArmy"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
+<fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
+<fullyQualifiedTypeName name="com.revature.bankapp.AdminCommand"/>
+<fullyQualifiedTypeName name="com.revature.bankapp.repo.AdminAccess"/>
+</qualifiedTypeNameHistroy>
