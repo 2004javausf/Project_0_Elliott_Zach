@@ -14,6 +14,7 @@ public class JointAcct implements BankScreen {
 	
 	int randNum = (int) (Math.random() * 1000) + 1;
 	int randNum2 = (int) (Math.random() * 90) + 1;
+	int number = randNum + randNum2;
 	
 	public JointAcct() {
 		this.cust = new Customer();
@@ -45,6 +46,7 @@ public class JointAcct implements BankScreen {
 			db.put(cust.getuName(), cust);
 			cDI.updateCust(db);
 			System.out.println("Thank You!");
+			System.out.println("When approved your account number will be: " + number);
 			if(randNum == randNum) {
 				System.out.println("What is your first name of the second person on the account?");
 				cust2.setfName(scan.nextLine());
@@ -64,6 +66,7 @@ public class JointAcct implements BankScreen {
 					cDI.updateCust(db2);
 					System.out.println("Thank You!");
 					System.out.println("Be aware you will not have access to an account until you are approved.");
+					System.out.println("When approved your account number will be: " + number);
 					return new MainBankScreen().render(scan);
 				}
 				
@@ -73,6 +76,7 @@ public class JointAcct implements BankScreen {
 					cDI.updateCust(db2);
 					System.out.println("Thank You!");
 					System.out.println("Be aware you will not have access to an account until you are approved.");
+					System.out.println("When approved your account number will be: " + number);
 					return new MainBankScreen().render(scan);
 				}
 				
@@ -85,7 +89,7 @@ public class JointAcct implements BankScreen {
 			db.put(cust.getuName(), cust);
 			cDI.updateCust(db);
 			System.out.println("Thank You!");
-			System.out.println("Be aware you will not have access to an account until you are approved.");
+			System.out.println("When approved your account number will be: " + number);
 			if(randNum == randNum) {
 				System.out.println("What is your first name of the second person on the account?");
 				cust2.setfName(scan.nextLine());
@@ -107,6 +111,7 @@ public class JointAcct implements BankScreen {
 					cDI.updateCust(db2);
 					System.out.println("Thank You!");
 					System.out.println("Be aware you will not have access to an account until you are approved.");
+					System.out.println("When approved your account number will be: " + number);
 					return new MainBankScreen().render(scan);
 				}
 				
@@ -116,6 +121,7 @@ public class JointAcct implements BankScreen {
 					cDI.updateCust(db2);
 					System.out.println("Thank You!");
 					System.out.println("Be aware you will not have access to an account until you are approved.");
+					System.out.println("When approved your account number will be: " + number);
 					return new MainBankScreen().render(scan);
 				}
 			}
