@@ -30,12 +30,10 @@ public class JointAcct implements BankScreen {
 		cust.setfName(scan.nextLine());
 		System.out.println("What is your last name first person on the account??");
 		cust.setlName(scan.nextLine());
-		System.out.println(randNum + randNum2);
 		System.out.println("What would you like your username of the first person to be?");
 		cust.setuName(scan.nextLine());
 		System.out.println("What would you like your password of the first person to be?");
 		cust.setPass(scan.nextLine());
-		cust.setAcctNum(randNum + randNum2);
 		cust.setAcctNum2(0);
 		
 		if(cDI.viewCust().containsKey(cust.getuName())) {
