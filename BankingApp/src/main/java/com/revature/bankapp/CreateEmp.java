@@ -24,13 +24,13 @@ public class CreateEmp implements BankScreen {
 			String employeeUsername = scan.nextLine();
 			System.out.println("Please Enter the Employee's Password");
 			String employeePassword = scan.nextLine();
-			new EmployeeTemp(employeeNameFirst, employeeNameLast, employeeUsername, employeePassword);
+			new EmployeeTemp(employeeUsername, employeePassword, employeeNameFirst, employeeNameLast);
 			System.out.println("Is this information correct? (y/n)");
 			System.out.println(EmployeeArmy.EmployeeListTemp.toString());
 			secTypCE = scan.nextLine();
 			if (secTypCE.equalsIgnoreCase("y")) {
 				System.out.println("Thank you for creating a new employee");
-				new EmployeeFinal(employeeNameFirst, employeeNameLast, employeeUsername,employeePassword);
+				new EmployeeFinal(employeeUsername, employeePassword, employeeNameFirst, employeeNameLast);
 				System.out.println(EmployeeArmy.EmployeeListFinal.toString());
 				BankApp.isRunning = false;
 			}else if (secTypCE.equalsIgnoreCase("n")) {

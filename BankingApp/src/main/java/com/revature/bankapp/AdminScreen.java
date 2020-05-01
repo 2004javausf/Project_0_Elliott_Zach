@@ -11,30 +11,33 @@ public class AdminScreen implements BankScreen {
 	System.out.println("==========================");
 	System.out.println("What would you like to do?");
 	System.out.println("1: Create new Admin");
-	System.out.println("2: Create new Employee");
-	System.out.println("3: View Employee Information");
-	System.out.println("4: Approve/Deny New Accounts");
-	System.out.println("5: Deposit/Withdraw/Transer Funds");
-	System.out.println("6: Cancel Account");
-	System.out.println("7: Return to Main Menu");
-	System.out.println("8: Exit Application");
+	System.out.println("2: View Admin Information");
+	System.out.println("3: Create new Employee");
+	System.out.println("4: View Employee Information");
+	System.out.println("5: Approve/Deny New Accounts");
+	System.out.println("6: Deposit/Withdraw/Transer Funds");
+	System.out.println("7: Cancel Account");
+	System.out.println("8: Return to Main Menu");
+	System.out.println("9: Exit Application");
 	
 	typAdmin = scan.nextLine();
 	if(typAdmin.equals("1")) {
 		return new CreateAdmin().render(scan);
 	}else if (typAdmin.equals("2")) {
-		return new CreateEmp().render(scan);
+		return new ViewAdmin().render(scan);
 	}else if (typAdmin.equals("3")) {
-		return new ViewEmp().render(scan);
+		return new CreateEmp().render(scan);
 	}else if (typAdmin.equals("4")) {
-		return new AppDenEmpAccess().render(scan);
+		return new ViewEmp().render(scan);
 	}else if (typAdmin.equals("5")) {
-		return new AdminDWT().render(scan);
+		return new AppDenEmpAccess().render(scan);
 	}else if (typAdmin.equals("6")) {
-		return new CloseAccount().render(scan);
+		return new AdminDWT().render(scan);
 	}else if (typAdmin.equals("7")) {
-		return new MainBankScreen().render(scan);
+		return new CloseAccount().render(scan);
 	}else if (typAdmin.equals("8")) {
+		return new MainBankScreen().render(scan);
+	}else if (typAdmin.equals("9")) {
 		BankApp.isRunning = false;
 		return null;
 	}else {

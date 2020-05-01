@@ -35,11 +35,11 @@ public class CreateAdmin implements BankScreen {
 				BankApp.isRunning = false;
 			}else if (secTypCA.equalsIgnoreCase("n")){
 				System.out.println("Restarting Create Admin Page");
-				AdminCommand.AdminListFinal.remove(0);
+				AdminCommand.AdminListTemp.remove(0);
 				return new CreateAdmin().render(scan);
 			}else {
 				System.out.println("Invalid Entry, Restarting Create Employee");
-				AdminCommand.AdminListFinal.remove(0);
+				AdminCommand.AdminListTemp.remove(0);
 				return new CreateAdmin().render(scan);
 			}
 		}else if (typCA.equalsIgnoreCase("n")) {
